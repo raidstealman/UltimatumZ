@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head><link rel="stylesheet" href="panel.css"></head>
+<head>
+    <link rel="stylesheet" href="panel.css">
+</head>
 <body>
     <div id="app">
         <div id="tabs">
-            <button onclick="showTab('chat')">Chat</button>
-            <button onclick="showTab('settings')">Settings</button>
+            <button id="tabChatBtn">Chat</button>
+            <button id="tabSettingsBtn">Settings</button>
         </div>
+
         <div id="chat" class="tab">
-            <textarea id="task" placeholder="Task..."></textarea>
-            <button id="runBtn">Run</button>
-            <div id="log"></div>
+            <textarea id="task" placeholder="Task... (contoh: Isi survey ini dengan data default, cek consent, lalu submit)"></textarea>
+            <div class="action-row">
+                <label class="toggle"><input type="checkbox" id="includeScreenshot"> Include screenshot awal</label>
+            </div>
+            <div class="action-row">
+                <button id="runBtn">Run</button>
+                <button id="shotBtn" class="secondary">Screenshot</button>
+            </div>
+            <div id="log" class="chat-log"></div>
         </div>
+
         <div id="settings" class="tab" style="display:none">
             <input type="password" id="apiKey" placeholder="OpenRouter API Key">
-            <input type="text" id="model" placeholder="Model (e.g. google/gemini-2.0-flash-exp:free)">
+            <input type="text" id="model" placeholder="Model (e.g. openai/gpt-oss-120b:free)">
             <button id="saveBtn">Save Settings</button>
         </div>
     </div>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="panel.css"></head>
+<body>
+    <div id="app">
+        <div id="tabs">
+            <button onclick="showTab('chat')">Chat</button>
+            <button onclick="showTab('settings')">Settings</button>
+        </div>
+        <div id="chat" class="tab">
+            <textarea id="task" placeholder="Task..."></textarea>
+            <button id="runBtn">Run</button>
+            <div id="log"></div>
+        </div>
+        <div id="settings" class="tab" style="display:none">
+            <input type="password" id="apiKey" placeholder="OpenRouter API Key">
+            <input type="text" id="model" placeholder="Model (e.g. google/gemini-2.0-flash-exp:free)">
+            <button id="saveBtn">Save Settings</button>
+        </div>
+    </div>
+    <script src="panel.js"></script>
+</body>
+</html>
